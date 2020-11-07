@@ -11,6 +11,6 @@ backup_path: バックアップ先のディレクトリ
 --days: バックアップを行う日数の間隔
 
 使い方例
-"""
+```
 $ python shedule_and_backup.py backup_source/source backup/dir_backup --number 5
-"""
+```
