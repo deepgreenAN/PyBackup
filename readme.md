@@ -1,5 +1,7 @@
 # ファイル・ディレクトリバックアップ
 
+## バックアッププログラムを利用する場合
+
 requirement:
 - schedule
 
@@ -12,5 +14,25 @@ backup_path: バックアップ先のディレクトリ
 
 使い方例
 ```
-$ python shedule_and_backup.py backup_source/source backup/dir_backup --number 5
+$ python schedule_and_backup.py backup_source/source backup/dir_backup --number 5
+```
+
+## 他のスケジューリングプログラムで利用する場合
+
+使い方例
+```python
+from schedule_and_backup import PyBackUp
+from pathlib import Path
+
+source_path = Path("backup_source/source")
+backup_path = Path("backup/dir_backup")
+
+pybackup = PyBackUp(source_path=source_path,
+                    backup_path=backup_path,
+                    back_number=5,
+                    to_zip=True
+                    )
+
+# バックアップを行うメソッド
+pybackup.back_up()
 ```
