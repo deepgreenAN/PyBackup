@@ -5,7 +5,6 @@ import shutil
 import time
 
 import zipfile
-import schedule
 
 
 def make_zip(source_path, zip_path):
@@ -165,6 +164,8 @@ class PyBackUp():
 
 if __name__ == "__main__":
     import argparse
+    import schedule
+    
     print("[{}] schedule program start".format(str(datetime.datetime.now())))
     parser = argparse.ArgumentParser(description='back up by shchedule')
 
