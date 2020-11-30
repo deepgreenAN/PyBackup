@@ -9,6 +9,13 @@ import schedule
 
 
 def make_zip(source_path, zip_path):
+    """
+    指定したパスのファイル・ディレクトリをzipファイルにして保存する関数
+    source_path: pathlib.Path
+        ソースとなるファイル・ディレクトリのパス
+    zip_path: pathlib.Path
+        保存するzipファイルのパス
+    """
     source_path = Path(source_path)
     zip_path =zip_path
 
@@ -48,7 +55,7 @@ class PyBackUp():
         is_use_text: bool
             バックアップファイルの管理にcsvを使うかどうか
         to_zip: bool
-            zip形式でほぞんするかどうか
+            zip形式で保存するかどうか
         """
         source_path = Path(source_path)
         if not source_path.exists():
@@ -108,9 +115,7 @@ class PyBackUp():
         with open(backup_data_text_path, "w", newline="") as f:
             writer = csv.writer(f)
             backup_time = datetime.datetime.now()
-            writer.writerow(["date",backup_time.year, backup_time.month, backup_time.day,
-                            backup_time.hour, backup_time.minute, backup_time.second
-                            ])
+            writer.writerow(["date", backup_time.strftime("%Y-%m-%d %H:%M:%S")])
             writer.writerow(["dir_number", backup_number])
             writer.writerow(["backup_count", self.backup_counter])
 
@@ -136,14 +141,10 @@ class PyBackUp():
                     # バックアップデータの読み込み
                     with open(backup_data_text_path, "r") as f:
                         reader = csv.reader(f)
+                        
                         datetime_list = next(reader)
-                        backup_datetime = datetime.datetime(int(datetime_list[1]),
-                                                            int(datetime_list[2]),
-                                                            int(datetime_list[3]),
-                                                            int(datetime_list[4]),
-                                                            int(datetime_list[5]),
-                                                            int(datetime_list[6]) 
-                                                            )
+                        backup_datetime = datetime.datetime.strptime(datetime_list[1],"%Y-%m-%d %H:%M:%S")
+                        
                         next(reader)  # この行はいらなかったかも
 
                         counter_list = next(reader)
