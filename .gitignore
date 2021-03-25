@@ -7,8 +7,8 @@ __pycache__/
 
 # その他
 .vscode/
-*.db
 backup/
 *.zip
+*.db
 source/
 backup_source/
