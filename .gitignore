@@ -7,8 +7,11 @@ __pycache__/
 
 # その他
 .vscode/
-backup/
+develop/backup/
 *.zip
 *.db
-source/
-backup_source/
+develop/source/
+develop/backup_source/
+build/
+dist/
+py_backup.egg-info/
