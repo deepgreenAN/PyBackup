@@ -20,4 +20,5 @@ setup(
     packages=packages,
     install_requires=install_requires,
     entry_points={'console_scripts': console_scripts},
+    test_suit="test"
 )

@@ -1,8 +1,13 @@
 # ファイル・ディレクトリバックアップ
 
-## requirement:
+## requirement
 - schedule
-## インストール
+## test
+```
+python setup.py test
+```
+
+## installation
 ```
 pip install git+https://github.com/deepgreenAN/py_backup.git
 ```
@@ -10,7 +15,9 @@ pip install git+https://github.com/deepgreenAN/py_backup.git
 ```
 python setup.py install
 ```
-## バックアッププログラムを利用する場合
+
+## 使い方
+### バックアッププログラムを利用する場合
 クローンしたディレクトリで以下のように実行するか
 
 ```
@@ -29,7 +36,7 @@ args:
 - --number: バックアップファイルの個数  
 - --days: バックアップを行う日数の間隔  
 
-## 他のスケジューリングプログラムで利用する場合
+### 他のスケジューリングプログラムで利用する場合
 
 使い方例
 ```python
