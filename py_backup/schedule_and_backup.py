@@ -197,9 +197,9 @@ if __name__ == "__main__":
     pybackup.back_up()
 
     if args.days != 1:
-        schedule.every(args.days).days.at("12:00").do(pybackup.back_up)
+        schedule.every(args.days).days.at("0:00").do(pybackup.back_up)
     else:
-        schedule.every().day.at("12:00").do(pybackup.back_up)
+        schedule.every().day.at("0:00").do(pybackup.back_up)
 
     while True:
         schedule.run_pending()
