@@ -3,6 +3,7 @@
 ## requirement
 - schedule
 ## test
+クローンしたディレクトリで
 ```
 python setup.py test
 ```
