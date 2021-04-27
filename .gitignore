@@ -15,5 +15,5 @@ develop/backup_source/
 build/
 dist/
 py_backup.egg-info/
-_develop/
+develop/
 develop_test/
